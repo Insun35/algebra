@@ -1,0 +1,36 @@
+load("@crate_index//:defs.bzl", "all_crate_deps")
+load("@rules_rust//rust:defs.bzl", "rust_library", "rust_test")
+
+package(default_visibility = ["//visibility:public"])
+
+ALIASES = {
+    "//ff": "ark_ff",
+    "//serialize": "ark_serialize",
+    "//serialize-derive": "ark_serialize",
+    "//test-curves": "ark_test_curves",
+}
+
+rust_library(
+    name = "poly",
+    srcs = glob(["src/**/*.rs"]),
+    aliases = ALIASES,
+    edition = "2018",
+    proc_macro_deps = all_crate_deps(proc_macro = True) + [
+        "//serialize-derive",
+    ],
+    version = "0.3.0",
+    deps = all_crate_deps(normal = True) + [
+        "//ff",
+        "//serialize",
+    ],
+)
+
+rust_test(
+    name = "poly_test",
+    aliases = ALIASES,
+    crate = ":poly",
+    proc_macro_deps = all_crate_deps(proc_macro_dev = True),
+    deps = all_crate_deps(normal_dev = True) + [
+        "//test-curves",
+    ],
+)

@@ -1,0 +1,48 @@
+load("@crate_index//:defs.bzl", "all_crate_deps")
+load("@rules_rust//rust:defs.bzl", "rust_library", "rust_test")
+
+package(default_visibility = ["//visibility:public"])
+
+ALIASES = {
+    "//ec": "ark_ec",
+    "//ff": "ark_ff",
+    "//serialize": "ark_serialize",
+    "//test-templates": "ark_test_templates",
+}
+
+rust_library(
+    name = "test-curves",
+    srcs = glob(["src/**/*.rs"]),
+    aliases = ALIASES,
+    crate_features = [
+        "default",
+        "asm",
+        "parallel",
+        "bls12_381_scalar_field",
+        "bls12_381_curve",
+        "mnt4_753_scalar_field",
+        "mnt4_753_base_field",
+        "mnt4_753_curve",
+        "bn384_small_two_adicity_scalar_field",
+        "bn384_small_two_adicity_base_field",
+        "bn384_small_two_adicity_curve",
+    ],
+    edition = "2018",
+    proc_macro_deps = all_crate_deps(proc_macro = True),
+    version = "0.3.0",
+    deps = all_crate_deps(normal = True) + [
+        "//ec",
+        "//ff",
+    ],
+)
+
+rust_test(
+    name = "test-curves_test",
+    aliases = ALIASES,
+    crate = ":test-curves",
+    proc_macro_deps = all_crate_deps(proc_macro_dev = True),
+    deps = all_crate_deps(normal_dev = True) + [
+        "//serialize",
+        "//test-templates",
+    ],
+)

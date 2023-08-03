@@ -1,0 +1,17 @@
+load("@crate_index//:defs.bzl", "all_crate_deps")
+load("@rules_rust//rust:defs.bzl", "rust_library")
+
+package(default_visibility = ["//visibility:public"])
+
+rust_library(
+    name = "poly-bench",
+    srcs = glob(["src/**/*.rs"]),
+    crate_features = [
+        "default",
+        "parallel",
+    ],
+    edition = "2018",
+    proc_macro_deps = all_crate_deps(proc_macro = True),
+    version = "0.3.0",
+    deps = all_crate_deps(normal = True),
+)

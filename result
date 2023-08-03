@@ -1,0 +1,845 @@
+Loading: 
+Loading: 
+Loading: 0 packages loaded
+Analyzing: target //poly:poly (0 packages loaded, 0 targets configured)
+INFO: Analyzed target //poly:poly (0 packages loaded, 0 targets configured).
+INFO: Found 1 target...
+[0 / 2] [Prepa] BazelWorkspaceStatusAction stable-status.txt ... (2 actions, 0 running)
+ERROR: /Users/merlyn/algebra/poly/BUILD.bazel:12:13: Compiling Rust rlib poly (20 files) failed: (Exit 1): process_wrapper failed: error executing command (from target //poly:poly) bazel-out/darwin_arm64-opt-exec-2B5CBBC6/bin/external/rules_rust/util/process_wrapper/process_wrapper --arg-file ... (remaining 69 arguments skipped)
+
+Use --sandbox_debug to see verbose messages from the sandbox and retain the sandbox build root for debugging
+error: cannot find derive macro `CanonicalSerialize` in this scope
+  --> poly/src/domain/mixed_radix.rs:32:44
+   |
+32 | #[derive(Copy, Clone, Hash, Eq, PartialEq, CanonicalSerialize, CanonicalDeserialize)]
+   |                                            ^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalSerialize
+note: `CanonicalSerialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/domain/mixed_radix.rs:18:43
+   |
+18 | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+   |                                           ^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalDeserialize` in this scope
+  --> poly/src/domain/mixed_radix.rs:32:64
+   |
+32 | #[derive(Copy, Clone, Hash, Eq, PartialEq, CanonicalSerialize, CanonicalDeserialize)]
+   |                                                                ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalDeserialize
+note: `CanonicalDeserialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/domain/mixed_radix.rs:18:21
+   |
+18 | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+   |                     ^^^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalSerialize` in this scope
+  --> poly/src/domain/radix2/mod.rs:22:44
+   |
+22 | #[derive(Copy, Clone, Hash, Eq, PartialEq, CanonicalSerialize, CanonicalDeserialize)]
+   |                                            ^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalSerialize
+note: `CanonicalSerialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/domain/radix2/mod.rs:9:43
+   |
+9  | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+   |                                           ^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalDeserialize` in this scope
+  --> poly/src/domain/radix2/mod.rs:22:64
+   |
+22 | #[derive(Copy, Clone, Hash, Eq, PartialEq, CanonicalSerialize, CanonicalDeserialize)]
+   |                                                                ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalDeserialize
+note: `CanonicalDeserialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/domain/radix2/mod.rs:9:21
+   |
+9  | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+   |                     ^^^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalSerialize` in this scope
+  --> poly/src/evaluations/multivariate/multilinear/dense.rs:16:47
+   |
+16 | #[derive(Clone, PartialEq, Eq, Hash, Default, CanonicalSerialize, CanonicalDeserialize)]
+   |                                               ^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalSerialize
+note: `CanonicalSerialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/evaluations/multivariate/multilinear/dense.rs:5:43
+   |
+5  | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, Read, SerializationError, Write};
+   |                                           ^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalDeserialize` in this scope
+  --> poly/src/evaluations/multivariate/multilinear/dense.rs:16:67
+   |
+16 | #[derive(Clone, PartialEq, Eq, Hash, Default, CanonicalSerialize, CanonicalDeserialize)]
+   |                                                                   ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalDeserialize
+note: `CanonicalDeserialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/evaluations/multivariate/multilinear/dense.rs:5:21
+   |
+5  | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, Read, SerializationError, Write};
+   |                     ^^^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalSerialize` in this scope
+  --> poly/src/evaluations/multivariate/multilinear/sparse.rs:19:47
+   |
+19 | #[derive(Clone, PartialEq, Eq, Hash, Default, CanonicalSerialize, CanonicalDeserialize)]
+   |                                               ^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalSerialize
+note: `CanonicalSerialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/evaluations/multivariate/multilinear/sparse.rs:6:43
+   |
+6  | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, Read, SerializationError, Write};
+   |                                           ^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalDeserialize` in this scope
+  --> poly/src/evaluations/multivariate/multilinear/sparse.rs:19:67
+   |
+19 | #[derive(Clone, PartialEq, Eq, Hash, Default, CanonicalSerialize, CanonicalDeserialize)]
+   |                                                                   ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalDeserialize
+note: `CanonicalDeserialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/evaluations/multivariate/multilinear/sparse.rs:6:21
+   |
+6  | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, Read, SerializationError, Write};
+   |                     ^^^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalSerialize` in this scope
+  --> poly/src/evaluations/univariate/mod.rs:17:45
+   |
+17 | #[derive(Clone, PartialEq, Eq, Hash, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                                             ^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalSerialize
+note: `CanonicalSerialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/evaluations/univariate/mod.rs:6:43
+   |
+6  | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+   |                                           ^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalDeserialize` in this scope
+  --> poly/src/evaluations/univariate/mod.rs:17:65
+   |
+17 | #[derive(Clone, PartialEq, Eq, Hash, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                                                                 ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalDeserialize
+note: `CanonicalDeserialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/evaluations/univariate/mod.rs:6:21
+   |
+6  | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+   |                     ^^^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalSerialize` in this scope
+  --> poly/src/polynomial/multivariate/sparse.rs:21:22
+   |
+21 | #[derive(Derivative, CanonicalSerialize, CanonicalDeserialize)]
+   |                      ^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalSerialize
+note: `CanonicalSerialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/polynomial/multivariate/sparse.rs:7:43
+   |
+7  | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+   |                                           ^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalDeserialize` in this scope
+  --> poly/src/polynomial/multivariate/sparse.rs:21:42
+   |
+21 | #[derive(Derivative, CanonicalSerialize, CanonicalDeserialize)]
+   |                                          ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalDeserialize
+note: `CanonicalDeserialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/polynomial/multivariate/sparse.rs:7:21
+   |
+7  | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+   |                     ^^^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalSerialize` in this scope
+  --> poly/src/polynomial/multivariate/mod.rs:56:47
+   |
+56 | #[derive(Clone, PartialEq, Eq, Hash, Default, CanonicalSerialize, CanonicalDeserialize)]
+   |                                               ^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalSerialize
+note: `CanonicalSerialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/polynomial/multivariate/mod.rs:3:43
+   |
+3  | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+   |                                           ^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalDeserialize` in this scope
+  --> poly/src/polynomial/multivariate/mod.rs:56:67
+   |
+56 | #[derive(Clone, PartialEq, Eq, Hash, Default, CanonicalSerialize, CanonicalDeserialize)]
+   |                                                                   ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalDeserialize
+note: `CanonicalDeserialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/polynomial/multivariate/mod.rs:3:21
+   |
+3  | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+   |                     ^^^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalSerialize` in this scope
+  --> poly/src/polynomial/univariate/dense.rs:20:47
+   |
+20 | #[derive(Clone, PartialEq, Eq, Hash, Default, CanonicalSerialize, CanonicalDeserialize)]
+   |                                               ^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalSerialize
+note: `CanonicalSerialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/polynomial/univariate/dense.rs:6:5
+   |
+6  | use ark_serialize::*;
+   |     ^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalDeserialize` in this scope
+  --> poly/src/polynomial/univariate/dense.rs:20:67
+   |
+20 | #[derive(Clone, PartialEq, Eq, Hash, Default, CanonicalSerialize, CanonicalDeserialize)]
+   |                                                                   ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalDeserialize
+note: `CanonicalDeserialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/polynomial/univariate/dense.rs:6:5
+   |
+6  | use ark_serialize::*;
+   |     ^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalSerialize` in this scope
+  --> poly/src/polynomial/univariate/sparse.rs:19:47
+   |
+19 | #[derive(Clone, PartialEq, Eq, Hash, Default, CanonicalSerialize, CanonicalDeserialize)]
+   |                                               ^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalSerialize
+note: `CanonicalSerialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/polynomial/univariate/sparse.rs:6:43
+   |
+6  | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+   |                                           ^^^^^^^^^^^^^^^^^^
+
+error: cannot find derive macro `CanonicalDeserialize` in this scope
+  --> poly/src/polynomial/univariate/sparse.rs:19:67
+   |
+19 | #[derive(Clone, PartialEq, Eq, Hash, Default, CanonicalSerialize, CanonicalDeserialize)]
+   |                                                                   ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider importing this derive macro:
+           serialize_derive::CanonicalDeserialize
+note: `CanonicalDeserialize` is imported here, but it is only a trait, without a derive macro
+  --> poly/src/polynomial/univariate/sparse.rs:6:21
+   |
+6  | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+   |                     ^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `SerializationError`
+  --> poly/src/domain/mixed_radix.rs:18:63
+   |
+18 | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+   |                                                               ^^^^^^^^^^^^^^^^^^
+   |
+note: the lint level is defined here
+  --> poly/src/lib.rs:4:9
+   |
+4  | #![warn(unused, future_incompatible, nonstandard_style, rust_2018_idioms)]
+   |         ^^^^^^
+   = note: `#[warn(unused_imports)]` implied by `#[warn(unused)]`
+
+warning: unused imports: `Read`, `Write`
+  --> poly/src/domain/mixed_radix.rs:23:10
+   |
+23 |     io::{Read, Write},
+   |          ^^^^  ^^^^^
+
+warning: unused import: `SerializationError`
+ --> poly/src/domain/radix2/mod.rs:9:63
+  |
+9 | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+  |                                                               ^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `Read`, `Write`
+  --> poly/src/domain/radix2/mod.rs:13:10
+   |
+13 |     io::{Read, Write},
+   |          ^^^^  ^^^^^
+
+warning: unused imports: `Read`, `SerializationError`, `Write`
+ --> poly/src/evaluations/multivariate/multilinear/dense.rs:5:63
+  |
+5 | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, Read, SerializationError, Write};
+  |                                                               ^^^^  ^^^^^^^^^^^^^^^^^^  ^^^^^
+
+warning: unused imports: `Read`, `SerializationError`, `Write`
+ --> poly/src/evaluations/multivariate/multilinear/sparse.rs:6:63
+  |
+6 | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, Read, SerializationError, Write};
+  |                                                               ^^^^  ^^^^^^^^^^^^^^^^^^  ^^^^^
+
+warning: unused import: `SerializationError`
+ --> poly/src/evaluations/univariate/mod.rs:6:63
+  |
+6 | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+  |                                                               ^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `Read`, `Write`
+ --> poly/src/evaluations/univariate/mod.rs:8:10
+  |
+8 |     io::{Read, Write},
+  |          ^^^^  ^^^^^
+
+warning: unused import: `SerializationError`
+ --> poly/src/polynomial/multivariate/mod.rs:3:63
+  |
+3 | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+  |                                                               ^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `Read`, `Write`
+ --> poly/src/polynomial/multivariate/mod.rs:8:10
+  |
+8 |     io::{Read, Write},
+  |          ^^^^  ^^^^^
+
+warning: unused import: `SerializationError`
+ --> poly/src/polynomial/multivariate/sparse.rs:7:63
+  |
+7 | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+  |                                                               ^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `Read`, `Write`
+  --> poly/src/polynomial/multivariate/sparse.rs:12:10
+   |
+12 |     io::{Read, Write},
+   |          ^^^^  ^^^^^
+
+warning: unused import: `SerializationError`
+ --> poly/src/polynomial/univariate/sparse.rs:6:63
+  |
+6 | use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError};
+  |                                                               ^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `Read`, `Write`
+  --> poly/src/polynomial/univariate/sparse.rs:10:10
+   |
+10 |     io::{Read, Write},
+   |          ^^^^  ^^^^^
+
+error[E0277]: the trait bound `MixedRadixEvaluationDomain<F>: serialize::CanonicalDeserialize` is not satisfied
+  --> poly/src/domain/mixed_radix.rs:60:19
+   |
+60 | impl<F: FftField> EvaluationDomain<F> for MixedRadixEvaluationDomain<F> {
+   |                   ^^^^^^^^^^^^^^^^^^^ the trait `serialize::CanonicalDeserialize` is not implemented for `MixedRadixEvaluationDomain<F>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalDeserialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 28 others
+note: required by a bound in `domain::EvaluationDomain`
+  --> poly/src/domain/mod.rs:32:84
+   |
+31 | pub trait EvaluationDomain<F: FftField>:
+   |           ---------------- required by a bound in this
+32 |     Copy + Clone + hash::Hash + Eq + PartialEq + fmt::Debug + CanonicalSerialize + CanonicalDeserialize
+   |                                                                                    ^^^^^^^^^^^^^^^^^^^^ required by this bound in `domain::EvaluationDomain`
+
+error[E0277]: the trait bound `MixedRadixEvaluationDomain<F>: serialize::CanonicalSerialize` is not satisfied
+  --> poly/src/domain/mixed_radix.rs:60:19
+   |
+60 | impl<F: FftField> EvaluationDomain<F> for MixedRadixEvaluationDomain<F> {
+   |                   ^^^^^^^^^^^^^^^^^^^ the trait `serialize::CanonicalSerialize` is not implemented for `MixedRadixEvaluationDomain<F>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalSerialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 29 others
+note: required by a bound in `domain::EvaluationDomain`
+  --> poly/src/domain/mod.rs:32:63
+   |
+31 | pub trait EvaluationDomain<F: FftField>:
+   |           ---------------- required by a bound in this
+32 |     Copy + Clone + hash::Hash + Eq + PartialEq + fmt::Debug + CanonicalSerialize + CanonicalDeserialize
+   |                                                               ^^^^^^^^^^^^^^^^^^ required by this bound in `domain::EvaluationDomain`
+
+error[E0277]: the trait bound `radix2::Radix2EvaluationDomain<F>: serialize::CanonicalDeserialize` is not satisfied
+  --> poly/src/domain/radix2/mod.rs:46:19
+   |
+46 | impl<F: FftField> EvaluationDomain<F> for Radix2EvaluationDomain<F> {
+   |                   ^^^^^^^^^^^^^^^^^^^ the trait `serialize::CanonicalDeserialize` is not implemented for `radix2::Radix2EvaluationDomain<F>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalDeserialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 28 others
+note: required by a bound in `domain::EvaluationDomain`
+  --> poly/src/domain/mod.rs:32:84
+   |
+31 | pub trait EvaluationDomain<F: FftField>:
+   |           ---------------- required by a bound in this
+32 |     Copy + Clone + hash::Hash + Eq + PartialEq + fmt::Debug + CanonicalSerialize + CanonicalDeserialize
+   |                                                                                    ^^^^^^^^^^^^^^^^^^^^ required by this bound in `domain::EvaluationDomain`
+
+error[E0277]: the trait bound `radix2::Radix2EvaluationDomain<F>: serialize::CanonicalSerialize` is not satisfied
+  --> poly/src/domain/radix2/mod.rs:46:19
+   |
+46 | impl<F: FftField> EvaluationDomain<F> for Radix2EvaluationDomain<F> {
+   |                   ^^^^^^^^^^^^^^^^^^^ the trait `serialize::CanonicalSerialize` is not implemented for `radix2::Radix2EvaluationDomain<F>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalSerialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 29 others
+note: required by a bound in `domain::EvaluationDomain`
+  --> poly/src/domain/mod.rs:32:63
+   |
+31 | pub trait EvaluationDomain<F: FftField>:
+   |           ---------------- required by a bound in this
+32 |     Copy + Clone + hash::Hash + Eq + PartialEq + fmt::Debug + CanonicalSerialize + CanonicalDeserialize
+   |                                                               ^^^^^^^^^^^^^^^^^^ required by this bound in `domain::EvaluationDomain`
+
+error[E0277]: the trait bound `DenseMultilinearExtension<F>: serialize::CanonicalDeserialize` is not satisfied
+  --> poly/src/evaluations/multivariate/multilinear/dense.rs:82:16
+   |
+82 | impl<F: Field> MultilinearExtension<F> for DenseMultilinearExtension<F> {
+   |                ^^^^^^^^^^^^^^^^^^^^^^^ the trait `serialize::CanonicalDeserialize` is not implemented for `DenseMultilinearExtension<F>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalDeserialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 28 others
+note: required by a bound in `MultilinearExtension`
+  --> poly/src/evaluations/multivariate/multilinear/mod.rs:34:7
+   |
+23 | pub trait MultilinearExtension<F: Field>:
+   |           -------------------- required by a bound in this
+...
+34 |     + CanonicalDeserialize
+   |       ^^^^^^^^^^^^^^^^^^^^ required by this bound in `MultilinearExtension`
+
+error[E0277]: the trait bound `DenseMultilinearExtension<F>: serialize::CanonicalSerialize` is not satisfied
+  --> poly/src/evaluations/multivariate/multilinear/dense.rs:82:16
+   |
+82 | impl<F: Field> MultilinearExtension<F> for DenseMultilinearExtension<F> {
+   |                ^^^^^^^^^^^^^^^^^^^^^^^ the trait `serialize::CanonicalSerialize` is not implemented for `DenseMultilinearExtension<F>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalSerialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 29 others
+note: required by a bound in `MultilinearExtension`
+  --> poly/src/evaluations/multivariate/multilinear/mod.rs:33:7
+   |
+23 | pub trait MultilinearExtension<F: Field>:
+   |           -------------------- required by a bound in this
+...
+33 |     + CanonicalSerialize
+   |       ^^^^^^^^^^^^^^^^^^ required by this bound in `MultilinearExtension`
+
+error[E0277]: the trait bound `SparseMultilinearExtension<F>: serialize::CanonicalDeserialize` is not satisfied
+   --> poly/src/evaluations/multivariate/multilinear/sparse.rs:111:16
+    |
+111 | impl<F: Field> MultilinearExtension<F> for SparseMultilinearExtension<F> {
+    |                ^^^^^^^^^^^^^^^^^^^^^^^ the trait `serialize::CanonicalDeserialize` is not implemented for `SparseMultilinearExtension<F>`
+    |
+    = help: the following other types implement trait `serialize::CanonicalDeserialize`:
+              ()
+              (A, B)
+              (A, B, C)
+              (A, B, C, D)
+              BTreeMap<K, V>
+              BTreeSet<T>
+              BigInteger128
+              BigInteger256
+            and 28 others
+note: required by a bound in `MultilinearExtension`
+   --> poly/src/evaluations/multivariate/multilinear/mod.rs:34:7
+    |
+23  | pub trait MultilinearExtension<F: Field>:
+    |           -------------------- required by a bound in this
+...
+34  |     + CanonicalDeserialize
+    |       ^^^^^^^^^^^^^^^^^^^^ required by this bound in `MultilinearExtension`
+
+error[E0277]: the trait bound `SparseMultilinearExtension<F>: serialize::CanonicalSerialize` is not satisfied
+   --> poly/src/evaluations/multivariate/multilinear/sparse.rs:111:16
+    |
+111 | impl<F: Field> MultilinearExtension<F> for SparseMultilinearExtension<F> {
+    |                ^^^^^^^^^^^^^^^^^^^^^^^ the trait `serialize::CanonicalSerialize` is not implemented for `SparseMultilinearExtension<F>`
+    |
+    = help: the following other types implement trait `serialize::CanonicalSerialize`:
+              ()
+              (A, B)
+              (A, B, C)
+              (A, B, C, D)
+              BTreeMap<K, V>
+              BTreeSet<T>
+              BigInteger128
+              BigInteger256
+            and 29 others
+note: required by a bound in `MultilinearExtension`
+   --> poly/src/evaluations/multivariate/multilinear/mod.rs:33:7
+    |
+23  | pub trait MultilinearExtension<F: Field>:
+    |           -------------------- required by a bound in this
+...
+33  |     + CanonicalSerialize
+    |       ^^^^^^^^^^^^^^^^^^ required by this bound in `MultilinearExtension`
+
+error[E0277]: the trait bound `SparseTerm: serialize::CanonicalDeserialize` is not satisfied
+  --> poly/src/polynomial/multivariate/mod.rs:79:6
+   |
+79 | impl Term for SparseTerm {
+   |      ^^^^ the trait `serialize::CanonicalDeserialize` is not implemented for `SparseTerm`
+   |
+   = help: the following other types implement trait `serialize::CanonicalDeserialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 28 others
+note: required by a bound in `Term`
+  --> poly/src/polynomial/multivariate/mod.rs:33:7
+   |
+20 | pub trait Term:
+   |           ---- required by a bound in this
+...
+33 |     + CanonicalDeserialize
+   |       ^^^^^^^^^^^^^^^^^^^^ required by this bound in `Term`
+
+error[E0277]: the trait bound `SparseTerm: serialize::CanonicalSerialize` is not satisfied
+  --> poly/src/polynomial/multivariate/mod.rs:79:6
+   |
+79 | impl Term for SparseTerm {
+   |      ^^^^ the trait `serialize::CanonicalSerialize` is not implemented for `SparseTerm`
+   |
+   = help: the following other types implement trait `serialize::CanonicalSerialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 29 others
+note: required by a bound in `Term`
+  --> poly/src/polynomial/multivariate/mod.rs:32:7
+   |
+20 | pub trait Term:
+   |           ---- required by a bound in this
+...
+32 |     + CanonicalSerialize
+   |       ^^^^^^^^^^^^^^^^^^ required by this bound in `Term`
+
+error[E0277]: the trait bound `polynomial::multivariate::sparse::SparsePolynomial<F, SparseTerm>: serialize::CanonicalDeserialize` is not satisfied
+  --> poly/src/polynomial/multivariate/sparse.rs:37:16
+   |
+37 | impl<F: Field> Polynomial<F> for SparsePolynomial<F, SparseTerm> {
+   |                ^^^^^^^^^^^^^ the trait `serialize::CanonicalDeserialize` is not implemented for `polynomial::multivariate::sparse::SparsePolynomial<F, SparseTerm>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalDeserialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 28 others
+note: required by a bound in `Polynomial`
+  --> poly/src/polynomial/mod.rs:27:7
+   |
+16 | pub trait Polynomial<F: Field>:
+   |           ---------- required by a bound in this
+...
+27 |     + CanonicalDeserialize
+   |       ^^^^^^^^^^^^^^^^^^^^ required by this bound in `Polynomial`
+
+error[E0277]: the trait bound `polynomial::multivariate::sparse::SparsePolynomial<F, SparseTerm>: serialize::CanonicalSerialize` is not satisfied
+  --> poly/src/polynomial/multivariate/sparse.rs:37:16
+   |
+37 | impl<F: Field> Polynomial<F> for SparsePolynomial<F, SparseTerm> {
+   |                ^^^^^^^^^^^^^ the trait `serialize::CanonicalSerialize` is not implemented for `polynomial::multivariate::sparse::SparsePolynomial<F, SparseTerm>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalSerialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 29 others
+note: required by a bound in `Polynomial`
+  --> poly/src/polynomial/mod.rs:26:7
+   |
+16 | pub trait Polynomial<F: Field>:
+   |           ---------- required by a bound in this
+...
+26 |     + CanonicalSerialize
+   |       ^^^^^^^^^^^^^^^^^^ required by this bound in `Polynomial`
+
+error[E0277]: the trait bound `polynomial::multivariate::sparse::SparsePolynomial<F, SparseTerm>: serialize::CanonicalDeserialize` is not satisfied
+  --> poly/src/polynomial/multivariate/sparse.rs:61:16
+   |
+61 | impl<F: Field> MVPolynomial<F> for SparsePolynomial<F, SparseTerm> {
+   |                ^^^^^^^^^^^^^^^ the trait `serialize::CanonicalDeserialize` is not implemented for `polynomial::multivariate::sparse::SparsePolynomial<F, SparseTerm>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalDeserialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 28 others
+note: required by a bound in `MVPolynomial`
+  --> poly/src/polynomial/mod.rs:59:35
+   |
+59 | pub trait MVPolynomial<F: Field>: Polynomial<F> {
+   |                                   ^^^^^^^^^^^^^ required by this bound in `MVPolynomial`
+
+error[E0277]: the trait bound `polynomial::multivariate::sparse::SparsePolynomial<F, SparseTerm>: serialize::CanonicalSerialize` is not satisfied
+  --> poly/src/polynomial/multivariate/sparse.rs:61:16
+   |
+61 | impl<F: Field> MVPolynomial<F> for SparsePolynomial<F, SparseTerm> {
+   |                ^^^^^^^^^^^^^^^ the trait `serialize::CanonicalSerialize` is not implemented for `polynomial::multivariate::sparse::SparsePolynomial<F, SparseTerm>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalSerialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 29 others
+note: required by a bound in `MVPolynomial`
+  --> poly/src/polynomial/mod.rs:59:35
+   |
+59 | pub trait MVPolynomial<F: Field>: Polynomial<F> {
+   |                                   ^^^^^^^^^^^^^ required by this bound in `MVPolynomial`
+
+error[E0277]: the trait bound `DensePolynomial<F>: serialize::CanonicalDeserialize` is not satisfied
+  --> poly/src/polynomial/univariate/dense.rs:26:16
+   |
+26 | impl<F: Field> Polynomial<F> for DensePolynomial<F> {
+   |                ^^^^^^^^^^^^^ the trait `serialize::CanonicalDeserialize` is not implemented for `DensePolynomial<F>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalDeserialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 28 others
+note: required by a bound in `Polynomial`
+  --> poly/src/polynomial/mod.rs:27:7
+   |
+16 | pub trait Polynomial<F: Field>:
+   |           ---------- required by a bound in this
+...
+27 |     + CanonicalDeserialize
+   |       ^^^^^^^^^^^^^^^^^^^^ required by this bound in `Polynomial`
+
+error[E0277]: the trait bound `DensePolynomial<F>: serialize::CanonicalSerialize` is not satisfied
+  --> poly/src/polynomial/univariate/dense.rs:26:16
+   |
+26 | impl<F: Field> Polynomial<F> for DensePolynomial<F> {
+   |                ^^^^^^^^^^^^^ the trait `serialize::CanonicalSerialize` is not implemented for `DensePolynomial<F>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalSerialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 29 others
+note: required by a bound in `Polynomial`
+  --> poly/src/polynomial/mod.rs:26:7
+   |
+16 | pub trait Polynomial<F: Field>:
+   |           ---------- required by a bound in this
+...
+26 |     + CanonicalSerialize
+   |       ^^^^^^^^^^^^^^^^^^ required by this bound in `Polynomial`
+
+error[E0277]: the trait bound `DensePolynomial<F>: serialize::CanonicalDeserialize` is not satisfied
+  --> poly/src/polynomial/univariate/dense.rs:96:16
+   |
+96 | impl<F: Field> UVPolynomial<F> for DensePolynomial<F> {
+   |                ^^^^^^^^^^^^^^^ the trait `serialize::CanonicalDeserialize` is not implemented for `DensePolynomial<F>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalDeserialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 28 others
+note: required by a bound in `UVPolynomial`
+  --> poly/src/polynomial/mod.rs:43:35
+   |
+43 | pub trait UVPolynomial<F: Field>: Polynomial<F, Point = F> {
+   |                                   ^^^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `UVPolynomial`
+
+error[E0277]: the trait bound `DensePolynomial<F>: serialize::CanonicalSerialize` is not satisfied
+  --> poly/src/polynomial/univariate/dense.rs:96:16
+   |
+96 | impl<F: Field> UVPolynomial<F> for DensePolynomial<F> {
+   |                ^^^^^^^^^^^^^^^ the trait `serialize::CanonicalSerialize` is not implemented for `DensePolynomial<F>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalSerialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 29 others
+note: required by a bound in `UVPolynomial`
+  --> poly/src/polynomial/mod.rs:43:35
+   |
+43 | pub trait UVPolynomial<F: Field>: Polynomial<F, Point = F> {
+   |                                   ^^^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `UVPolynomial`
+
+error[E0277]: the trait bound `polynomial::univariate::sparse::SparsePolynomial<F>: serialize::CanonicalDeserialize` is not satisfied
+  --> poly/src/polynomial/univariate/sparse.rs:56:16
+   |
+56 | impl<F: Field> Polynomial<F> for SparsePolynomial<F> {
+   |                ^^^^^^^^^^^^^ the trait `serialize::CanonicalDeserialize` is not implemented for `polynomial::univariate::sparse::SparsePolynomial<F>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalDeserialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 28 others
+note: required by a bound in `Polynomial`
+  --> poly/src/polynomial/mod.rs:27:7
+   |
+16 | pub trait Polynomial<F: Field>:
+   |           ---------- required by a bound in this
+...
+27 |     + CanonicalDeserialize
+   |       ^^^^^^^^^^^^^^^^^^^^ required by this bound in `Polynomial`
+
+error[E0277]: the trait bound `polynomial::univariate::sparse::SparsePolynomial<F>: serialize::CanonicalSerialize` is not satisfied
+  --> poly/src/polynomial/univariate/sparse.rs:56:16
+   |
+56 | impl<F: Field> Polynomial<F> for SparsePolynomial<F> {
+   |                ^^^^^^^^^^^^^ the trait `serialize::CanonicalSerialize` is not implemented for `polynomial::univariate::sparse::SparsePolynomial<F>`
+   |
+   = help: the following other types implement trait `serialize::CanonicalSerialize`:
+             ()
+             (A, B)
+             (A, B, C)
+             (A, B, C, D)
+             BTreeMap<K, V>
+             BTreeSet<T>
+             BigInteger128
+             BigInteger256
+           and 29 others
+note: required by a bound in `Polynomial`
+  --> poly/src/polynomial/mod.rs:26:7
+   |
+16 | pub trait Polynomial<F: Field>:
+   |           ---------- required by a bound in this
+...
+26 |     + CanonicalSerialize
+   |       ^^^^^^^^^^^^^^^^^^ required by this bound in `Polynomial`
+
+error: aborting due to 38 previous errors; 14 warnings emitted
+
+For more information about this error, try `rustc --explain E0277`.
+Target //poly:poly failed to build
+Use --verbose_failures to see the command lines of failed build steps.
+INFO: Elapsed time: 0.891s, Critical Path: 0.63s
+INFO: 2 processes: 2 internal.
+FAILED: Build did NOT complete successfully

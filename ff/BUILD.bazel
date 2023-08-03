@@ -1,0 +1,31 @@
+load("@crate_index//:defs.bzl", "all_crate_deps")
+load("@rules_rust//rust:defs.bzl", "rust_library", "rust_test")
+
+package(default_visibility = ["//visibility:public"])
+
+ALIASES = {
+    "//ff-asm": "ark_ff_asm",
+    "//ff-macros": "ark_ff_macros",
+    "//serialize": "ark_serialize",
+}
+
+rust_library(
+    name = "ff",
+    srcs = glob(["src/**/*.rs"]),
+    aliases = ALIASES,
+    edition = "2018",
+    proc_macro_deps = all_crate_deps(proc_macro = True) + [
+        "//ff-macros",
+        "//ff-asm",
+    ],
+    version = "0.3.0",
+    deps = [
+        "//serialize",
+    ] + all_crate_deps(normal = True),
+)
+
+rust_test(
+    name = "ff_test",
+    aliases = ALIASES,
+    crate = ":ff",
+)

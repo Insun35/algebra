@@ -1,0 +1,29 @@
+load("@crate_index//:defs.bzl", "all_crate_deps")
+load("@rules_rust//rust:defs.bzl", "rust_library", "rust_test")
+
+package(default_visibility = ["//visibility:public"])
+
+ALIASES = {
+    "//serialize-derive": "ark_serialize_derive",
+}
+
+rust_library(
+    name = "serialize",
+    srcs = glob(["src/**/*.rs"]),
+    aliases = ALIASES,
+    crate_features = [
+        "default",
+        "derive",
+        "std",
+    ],
+    proc_macro_deps = all_crate_deps(proc_macro = True) + [
+        "//serialize-derive",
+    ],
+    deps = all_crate_deps(normal = True),
+)
+
+rust_test(
+    name = "serialize_test",
+    crate = ":serialize",
+    deps = all_crate_deps(normal_dev = True),
+)

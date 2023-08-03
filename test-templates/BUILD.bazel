@@ -1,0 +1,27 @@
+load("@crate_index//:defs.bzl", "all_crate_deps")
+load("@rules_rust//rust:defs.bzl", "rust_library")
+
+package(default_visibility = ["//visibility:public"])
+
+ALIASES = {
+    "//ff": "ark_ff",
+    "//ec": "ark_ec",
+    "//serialize": "ark_serialize",
+}
+
+rust_library(
+    name = "test-templates",
+    srcs = glob(["src/**/*.rs"]),
+    aliases = ALIASES,
+    crate_features = [
+        "default",
+        "std",
+    ],
+    edition = "2018",
+    version = "0.3.0",
+    deps = all_crate_deps(normal = True) + [
+        "//ec",
+        "//ff",
+        "//serialize",
+    ],
+)
